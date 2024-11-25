@@ -13,10 +13,10 @@ var remainingTickets uint = 50
 var bookings = make([]UserData, 0)
 
 type UserData struct {
-	firstName        string
-	lastName         string
-	email            string
-	nummberOfTickets uint
+	firstName       string
+	lastName        string
+	email           string
+	numberOfTickets uint
 }
 
 var wg = sync.WaitGroup{}
@@ -54,8 +54,8 @@ func main() {
 				fmt.Println("Number of tickets is invalid")
 			}
 		}
-		wg.Wait()
 	}
+	wg.Wait()
 }
 
 func greetUsers() {
@@ -96,10 +96,10 @@ func bookTicket(userTickets uint, firstName string, lastName string, email strin
 
 	//create map for a user
 	var userData = UserData{
-		firstName:        firstName,
-		lastName:         lastName,
-		email:            email,
-		nummberOfTickets: userTickets,
+		firstName:       firstName,
+		lastName:        lastName,
+		email:           email,
+		numberOfTickets: userTickets,
 	}
 
 	bookings = append(bookings, userData)
